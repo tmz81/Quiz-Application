@@ -1,6 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
+import { Shuffle } from "../../../function/shuffle"
 import questions from "../dbQuestions"
 
 export default (req, res) => {
-  res.status(200).json(questions.map(question => question.id))    
+  const IdsOfQuestions = questions.map(question => question.id)
+  res.status(200).json(Shuffle(IdsOfQuestions))    
 }

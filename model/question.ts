@@ -1,3 +1,4 @@
+import { Shuffle } from "../function/shuffle";
 import AnswersModel from "./answers";
 
 export default class QuestionModel {
@@ -36,6 +37,11 @@ export default class QuestionModel {
     }
     
     return false
+  }
+
+  shuffleAnswers(): QuestionModel {
+    let answersShuffle = Shuffle(this.#answers)
+    return new QuestionModel(this.#id, this.#enunciate, answersShuffle, this.#right) 
   }
 
   convertToObject() {
