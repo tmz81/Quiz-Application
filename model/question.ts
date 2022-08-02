@@ -15,19 +15,19 @@ export default class QuestionModel {
   }
 
   get id() {
-    return this.id
+    return this.#id
   }
 
   get enunciate() {
-    return this.enunciate
+    return this.#enunciate
   }
 
   get answers() {
-    return this.answers
+    return this.#answers
   }
 
   get right() {
-    return this.right
+    return this.#right
   }
 
   get answered() {
