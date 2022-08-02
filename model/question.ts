@@ -39,6 +39,16 @@ export default class QuestionModel {
     return false
   }
 
+  responseWith(index: number): QuestionModel {
+    const gotItRight = this.#answers[index]?.right
+    const answer = this.#answers.map((answer, i) => {
+      const answersSelected = index === i
+      const mustReveal = answersSelected || answer.right
+      return mustReveal ? answer.toReveal() : answer
+    })
+    return new QuestionModel(this.#id, this.#enunciate, answer, gotItRight)
+  }  
+
   shuffleAnswers(): QuestionModel {
     let answersShuffle = Shuffle(this.#answers)
     return new QuestionModel(this.#id, this.#enunciate, answersShuffle, this.#right) 
@@ -48,8 +58,9 @@ export default class QuestionModel {
     return {
       id: this.#id,
       enunciate: this.#enunciate,
+      answered: this.answered,
+      right: this.#right,
       answers: this.#answers.map(res => res.convertToObject()),
-      right: this.#right
     }
   }
 }
