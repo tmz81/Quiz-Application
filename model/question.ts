@@ -37,4 +37,13 @@ export default class QuestionModel {
     
     return false
   }
+
+  convertToObject() {
+    return {
+      id: this.#id,
+      enunciate: this.#enunciate,
+      answers: this.#answers.map(res => res.convertToObject()),
+      right: this.#right
+    }
+  }
 }
