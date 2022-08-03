@@ -4,8 +4,18 @@ import Enunciate from './Enunciate';
 import Answer from './Answer';
 
 interface QuestProps {
-  value: QuestionModel
+  value: QuestionModel;
+  timeOfAnswer?: number;
+  answerProvider: (index: number) => void;
+  timesUp: () => void;
 }
+
+const letters = [
+  { value: 'A', color: '#F2C866' },
+  { value: 'B', color: '#F266BA' },
+  { value: 'C', color: '#85D4F2' },
+  { value: 'D', color: '#BCE596' },
+]
 
 export default function Quest(props: QuestProps) {
   const quest = props.value
@@ -13,11 +23,12 @@ export default function Quest(props: QuestProps) {
   function renderAnswer() {
     return quest.answers.map((answer, i) => {
       return (<Answer
-        key={i}
+        key={`${quest.id}-${i}`}
         value={answer} 
         index={i} 
-        letter={'A'} 
-        colorLetter={'#F2C866'}
+        letter={letters[i].value} 
+        colorLetter={letters[i].color}
+        answerProvider={props.answerProvider}
       />
     )})
   }
