@@ -2,6 +2,7 @@ import styles from '../styles/Quest.module.css';
 import QuestionModel from "../model/question"
 import Enunciate from './Enunciate';
 import Answer from './Answer';
+import Timer from './Timer';
 
 interface QuestProps {
   value: QuestionModel;
@@ -36,6 +37,11 @@ export default function Quest(props: QuestProps) {
   return (
     <div className={styles.quest}>
       <Enunciate text={quest.enunciate}/>
+      <Timer 
+        key={quest.id} 
+        duration={props.timeOfAnswer ?? 10}
+        timesUp={props.timesUp}
+        />
       {renderAnswer()}
     </div>
   )

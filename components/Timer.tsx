@@ -13,13 +13,13 @@ export default function Timer(props: TimerProps) {
       <CountdownCircleTimer
         duration={props.duration}
         size={150}
+        isPlaying
         onComplete={props.timesUp}
         colors={[
           ['#BCE596', 0.33],
           ['#F7B801', 0.33],
           ['#ED827A', 0.33],
         ]}
-        isPlaying
       >
         {({ remainingTime }) => remainingTime}
       </CountdownCircleTimer>
