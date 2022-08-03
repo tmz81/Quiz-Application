@@ -12,7 +12,7 @@ export default function Timer(props: TimerProps) {
     <div className={styles.timer}>
       <CountdownCircleTimer
         duration={props.duration}
-        size={150}
+        size={120}
         isPlaying
         onComplete={props.timesUp}
         colors={[

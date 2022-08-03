@@ -39,7 +39,7 @@ export default function Quest(props: QuestProps) {
       <Enunciate text={quest.enunciate}/>
       <Timer 
         key={quest.id} 
-        duration={props.timeOfAnswer ?? 10}
+        duration={props.timeOfAnswer ?? 20}
         timesUp={props.timesUp}
         />
       {renderAnswer()}
