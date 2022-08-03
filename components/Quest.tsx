@@ -16,8 +16,8 @@ export default function Quest(props: QuestProps) {
         key={i}
         value={answer} 
         index={i} 
-        letter={'a'} 
-        colorLetter={'F2C866'}
+        letter={'A'} 
+        colorLetter={'#F2C866'}
       />
     )})
   }
