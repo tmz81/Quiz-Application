@@ -11,7 +11,15 @@ export default function Home() {
   ])
   
   return (
-    <Quest value={questTest}/>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'Center',
+      height: '100vh',
+    }}>
+      <Quest value={questTest}/>
+
+    </div>
   )
 }
 
