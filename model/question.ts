@@ -6,7 +6,6 @@ export default class QuestionModel {
   #enunciate: string;
   #answers: AnswersModel[];
   #right: boolean;
-  // private answered: boolean;
 
   constructor(id: number, enunciate: string, answers: AnswersModel[], right = false) {
     this.#id = id
@@ -31,7 +30,11 @@ export default class QuestionModel {
     return this.#right
   }
 
-  get answered() {
+  get notAnswer() {
+    return !this.#answers 
+  }
+
+  get answer() {
     for(let answer of this.#answers) {
       if(answer.revealed) return true
     }
@@ -54,11 +57,16 @@ export default class QuestionModel {
     return new QuestionModel(this.#id, this.#enunciate, answersShuffle, this.#right) 
   }
 
+  static createUsedObject(obj: QuestionModel): QuestionModel {
+    const response = obj.answers.map((res => AnswersModel.createUsedObject(res)))
+    return new QuestionModel(obj.id, obj.enunciate, response ,obj.right)
+  }
+
   convertToObject() {
     return {
       id: this.#id,
       enunciate: this.#enunciate,
-      answered: this.answered,
+      answered: this.answer,
       right: this.#right,
       answers: this.#answers.map(res => res.convertToObject()),
     }
