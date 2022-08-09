@@ -1,6 +1,6 @@
 import Quest from '../components/Questao';
-import QuestionModel from '../model/question';
-import AnswersModel from '../model/answers';
+import QuestionModel from '../model/questao';
+import AnswersModel from '../model/resposta';
 
 export default function Home() {
   const questTest = new QuestionModel(1, 'Best Color?', [

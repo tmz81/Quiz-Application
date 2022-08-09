@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { Shuffle } from "../../../function/shuffle"
+import { Shuffle } from "../../../function/arrays"
 import questions from "../dbQuestions"
 
 export default (req, res) => {
