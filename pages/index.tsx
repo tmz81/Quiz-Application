@@ -1,4 +1,4 @@
-import Quest from '../components/Quest';
+import Quest from '../components/Questao';
 import QuestionModel from '../model/question';
 import AnswersModel from '../model/answers';
 

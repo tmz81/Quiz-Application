@@ -1,6 +1,6 @@
 import styles from '../styles/Result.module.css';
-import Statistic from '../components/Statictis';
-import Button from '../components/Button';
+import Statistic from '../components/Estatistica';
+import Button from '../components/Botao';
 import { useRouter } from 'next/router';
 
 export default function Result() {
