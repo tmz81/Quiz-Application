@@ -3,10 +3,10 @@ import AnswersModel from "../model/answers";
 
 interface AnswerProps {
   value: AnswersModel;
-  index: number;
-  letter: string;
-  colorLetter: string;
-  answerProvider: (index: number) => void;
+  questionIndex: number;
+  alternativeLetter: string;
+  alternativeLetterColor: string;
+  userProvidedResponse: (indexUserProvidedResponse : number) => void;
 }
 
 export default function Answer(props: AnswerProps) {
@@ -16,14 +16,14 @@ export default function Answer(props: AnswerProps) {
   return (
     <div 
       className={styles.answer}
-      onClick={() => props.answerProvider(props.index)}  
+      onClick={() => props.userProvidedResponse(props.indexUserProvidedResponse)}  
     >
       <div className={styles.contentAnswer}>
         <div className={`${answerRevealed} ${styles.answerContent}`}>
           <div 
-            style={{backgroundColor: props.colorLetter}}
+            style={{backgroundColor: props.alternativeLetterColor}}
             className={styles.letter}>
-            {props.letter}
+            {props.alternativeLetter}
           </div>
           <div className={styles.value}>
             {answer.value}

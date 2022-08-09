@@ -11,7 +11,7 @@ interface QuizProps {
 }
 
 export default function QuizProps(props: QuizProps) {
-  function answerProvider(index: number) {
+  function answerProvid(index: number) {
     if(props.quest.notAnswer) {
       props.questionAnswered(props.quest.responseWith(index))
     }
@@ -23,7 +23,7 @@ export default function QuizProps(props: QuizProps) {
         <Quest 
           value={props.quest}
           timeOfAnswer={6}
-          answerProvider={answerProvider}
+          answerProvid={answerProvid}
           timesUp={props.nextQuest} />
         : false
       }

@@ -12,12 +12,12 @@
     "forceConsistentCasingInFileNames": false,
     "noEmit": false,
     "incremental": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "module": "esnext",
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "preserve",
-    "resolveJsonModule": false,
-    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
   },
   "include": [
     "next-env.d.ts",

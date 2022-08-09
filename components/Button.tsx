@@ -1,27 +1,27 @@
-import styles from '../styles/Button.module.css';
+import styles from '../styles/Button.module.css'
 import Link from 'next/link'
 
-interface ButtonProps {
-  text: string;
-  href?: string;
-  onClick?: (event: any) => void;
+interface BotaoProps {
+  texto: string
+  href?: string
+  onClick?: (e: any) => void
 }
 
-export default function Button(props: ButtonProps) {
-  function renderButton() {
+
+export default function Botao(props: BotaoProps) {
+
+  function renderizarBotao() {
     return (
-      <button 
-        className={styles.button}
-        onClick={props.onClick}
-      >
-        {props.text}
+      <button className={styles.botao}
+        onClick={props.onClick}>
+        {props.texto}
       </button>
     )
   }
-  
+
   return props.href ? (
     <Link href={props.href}>
-      {renderButton()}
+      {renderizarBotao()}
     </Link>
-  ) : renderButton()
+  ) : renderizarBotao()
 }

@@ -7,7 +7,7 @@ import Timer from './Timer';
 interface QuestProps {
   value: QuestionModel;
   timeOfAnswer?: number;
-  answerProvider: (index: number) => void;
+  answerProvid: (indexOfQuestion: number) => void;
   timesUp: () => void;
 }
 
@@ -26,10 +26,10 @@ export default function Quest(props: QuestProps) {
       return (<Answer
         key={`${quest.id}-${i}`}
         value={answer} 
-        index={i} 
+        indexOfQuestion={i} 
         letter={letters[i].value} 
         colorLetter={letters[i].color}
-        answerProvider={props.answerProvider}
+        respostaFornecida={props.answerProvid}
       />
     )})
   }
