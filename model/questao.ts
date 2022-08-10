@@ -1,4 +1,4 @@
-import { embaralhar } from "../functions/arrays";
+import { embaralhar } from "../function/arrays";
 import RespostaModel from "./resposta";
 
 export default class QuestaoModel {

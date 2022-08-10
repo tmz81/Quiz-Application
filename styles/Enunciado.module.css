@@ -1,8 +1,8 @@
-.enunciate {
+.enunciado {
   display: flex;
 }
 
-.text {
+.texto {
   font-size: 2.5rem;
   font-weight: 700;
 }

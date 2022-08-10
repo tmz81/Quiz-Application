@@ -1,26 +1,33 @@
-.answer {
+.resposta {
   display: flex;
-  min-width: 500px; 
+  min-width: 500px;
   width: 80%;
   height: 100px;
   margin: 10px;
   perspective: 1000px;
+  cursor: pointer;
+  transition: filter 0.2s;
 }
 
-.contentAnswer {
+.resposta:hover {
+  transform: scale(1.1);
+  filter: brightness(0.9);
+}
+
+.conteudoResposta {
   position: relative;
   display: flex;
   flex: 1;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  cursor: pointer;
 }
 
-.contentRevealed.contentAnswer {
+.respostaRevelada.conteudoResposta {
   transform: rotateY(180deg);
 }
 
-.front, .back {
+.frente,
+.verso {
   position: absolute;
   display: flex;
   height: 100%;
@@ -29,7 +36,7 @@
   backface-visibility: hidden;
 }
 
-.front {
+.frente {
   align-items: center;
   border-radius: 12px;
   padding: 15px;
@@ -37,11 +44,11 @@
   background-color: #fff;
 }
 
-.back {
+.verso {
   transform: rotateY(180deg);
 }
 
-.back > div {
+.verso > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,35 +57,33 @@
   border-radius: 12px;
 }
 
-.correct {
-  background-color: #2BAA6D;
+.certa {
+  background-color: #2baa6d;
 }
 
-.incorrect {
-  background-color: #E44A4C;
+.errada {
+  background-color: #e44a4c;
 }
 
-.correct .value, .incorrect .value {
+.certa .valor,
+.errada .valor {
   font-size: 1.5rem;
 }
 
-.letter {
-  heigth: 40px;
-  width: 40px;
-
+.letra {
   display: flex;
-  jusitfy-content: center;
+  justify-content: center;
   align-items: center;
-
+  height: 40px;
+  width: 40px;
   border-radius: 20px;
-  margin-right: 20px;
-
-  color: #fff;
   font-size: 1.3rem;
   font-weight: 700;
+  margin-right: 20px;
+  color: #fff;
 }
 
-.value {
+.valor {
   font-size: 1.3rem;
   font-weight: 700;
 }
